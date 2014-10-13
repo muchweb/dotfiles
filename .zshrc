@@ -50,8 +50,12 @@ plugins=(web-search git pacman cake common-aliases docker npm svn sudo systemd)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 export PATH="/home/muchweb/.gem/ruby/2.1.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
+
+# Installing global NPM modules in home                                                  
+npm config set prefix ~/.npm
+export PATH=$HOME/.npm/bin:$PATH
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

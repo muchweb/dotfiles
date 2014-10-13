@@ -30,6 +30,10 @@ export PS1="\n\[\e[0;36m\]┌─[\[\e[0m\]\[\e[1;33m\]\u\[\e[0m\]\[\e[1;36m\] @ 
 # https://wiki.archlinux.org/index.php/Ruby#RubyGems
 PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
 
+# Installing global NPM modules in home
+npm config set prefix ~/.npm
+PATH=$HOME/.npm/bin:$PATH
+
 # easy-mode
 # export EDITOR=nano
 
