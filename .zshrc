@@ -15,9 +15,6 @@ plugins=(web-search git pacman cake common-aliases docker npm svn sudo systemd)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/vendor_perl:/usr/bin/core_perl"
-
 # Installing global GEM modules in home
 export GEM_HOME=$HOME/gems
 export GEM_PATH=$HOME/gems:$GEM_PATH
