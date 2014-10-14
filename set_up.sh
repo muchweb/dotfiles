@@ -1,6 +1,6 @@
 #!/bin/bash
 echo ' - setting keyboard to GB'
-./scripts/set_keyboard_gb.sh
+setxkbmap -layout gb
 
 # Changing background colour
 # Awesome wallpaper command
