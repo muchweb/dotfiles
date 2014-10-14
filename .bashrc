@@ -20,7 +20,7 @@ export PS1="\n\[\e[0;36m\]┌─[\[\e[0m\]\[\e[1;33m\]\u\[\e[0m\]\[\e[1;36m\] @ 
 # Installing global GEM modules in home
 export GEM_HOME=$HOME/gems
 export GEM_PATH=$HOME/gems:$GEM_PATH
-export PATH=$HOME/gems:$PATH
+export PATH="`ruby -e 'print Gem.user_dir'`/bin:$PATH"
 
 # Installing global NPM modules in home
 npm config set prefix $HOME/.npm
