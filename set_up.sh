@@ -10,3 +10,6 @@ xsetroot -solid '#2D2D2D'
 
 # Screen locker
 xscreensaver -no-splash &
+
+# Mouse speed
+xset m 1 1
