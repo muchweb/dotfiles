@@ -4,16 +4,6 @@
 # Ubuntu 14.04 docker package
 # alias docker='docker.io'
 
-# Local NPM installs
-# export PATH=$HOME/npm/bin:$PATH
-
-# Local gem installs
-# export GEM_HOME=~/gems
-
-# Running emacs in console
-# alias emacs='emacs -nw'
-# Using emacs-nox package instead
-
 # Default
 # [user@host ~]$
 # PS1='[\u@\h \W]\$ '
@@ -27,19 +17,18 @@
 # └─[$]› ls
 export PS1="\n\[\e[0;36m\]┌─[\[\e[0m\]\[\e[1;33m\]\u\[\e[0m\]\[\e[1;36m\] @ \[\e[0m\]\[\e[1;33m\]\h\[\e[0m\]\[\e[0;36m\]]─[\[\e[0m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[0;36m\]]\[\e[0;36m\]─[\[\e[0m\]\[\e[0;31m\]\!\[\e[0m\]\[\e[0;36m\]]\[\e[0m\]\n\[\e[0;36m\]└─[\[\e[0m\]\[\e[1;37m\]\$\[\e[0m\]\[\e[0;36m\]]› \[\e[0m\]"
 
-# https://wiki.archlinux.org/index.php/Ruby#RubyGems
-PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
+# Installing global GEM modules in home
+export GEM_HOME=$HOME/gems
+export GEM_PATH=$HOME/gems:$GEM_PATH
+export PATH=$HOME/gems:$PATH
 
 # Installing global NPM modules in home
-npm config set prefix ~/.npm
-PATH=$HOME/.npm/bin:$PATH
+npm config set prefix $HOME/.npm
+export PATH=$HOME/.npm/bin:$PATH
 
-# easy-mode
-# export EDITOR=nano
-
-# medium-mode
-# Yes, I am finally more comfortable with it! :-)
-export EDITOR=emacs
+# Set editor to emacs
+export EDITOR=/usr/bin/emacs
+export VISUAL=/usr/bin/emacs
 
 # ls aliases
 alias ll="ls -lh"
