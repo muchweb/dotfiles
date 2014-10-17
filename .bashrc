@@ -17,32 +17,16 @@
 # └─[$]› ls
 export PS1="\n\[\e[0;36m\]┌─[\[\e[0m\]\[\e[1;33m\]\u\[\e[0m\]\[\e[1;36m\] @ \[\e[0m\]\[\e[1;33m\]\h\[\e[0m\]\[\e[0;36m\]]─[\[\e[0m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[0;36m\]]\[\e[0;36m\]─[\[\e[0m\]\[\e[0;31m\]\!\[\e[0m\]\[\e[0;36m\]]\[\e[0m\]\n\[\e[0;36m\]└─[\[\e[0m\]\[\e[1;37m\]\$\[\e[0m\]\[\e[0;36m\]]› \[\e[0m\]"
 
-# Installing global GEM modules in home
-export GEM_HOME=$HOME/gems
-export GEM_PATH=$HOME/gems:$GEM_PATH
-export PATH="`ruby -e 'print Gem.user_dir'`/bin:$PATH"
-
-# Installing global NPM modules in home
-npm config set prefix $HOME/.npm
-export PATH=$HOME/.npm/bin:$PATH
-
-# Set editor to emacs
-export EDITOR=/usr/bin/emacs
-export VISUAL=/usr/bin/emacs
-
-# ls aliases
-alias ll="ls -lh"
-alias lll="ls -lh --sort=size"
-alias la='ls -A'
-
-# get external IP address
-alias myip="curl ifconfig.me"
-
-# Dangerous
-alias rmrf="rm -rfv"
-
-# Install a package via AUR
-alias aursh="bash <(curl aur.sh) -si"
+# = From oh-my-zsh =
+alias l="ls -lFh" #size,show type,human readable
+alias la="ls -lAFh" #long list,show almost all,show type,human readable
+alias lr="ls -tRFh" #sorted by date,recursive,show type,human readable
+alias lt="ls -ltFh" #long list,sorted by date,show type,human readable
+alias ll="ls -l" #long list
+alias ldot="ls -ld .*"
+alias lS="ls -1FSsh"
+alias lart="ls -1Fcart"
+alias lrt="ls -1Fcrt"
 
 # Adding colours
 if [ -x /usr/bin/dircolors ]; then
@@ -52,3 +36,28 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
+# Installing global GEM modules in home
+export GEM_HOME=$HOME/gems
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export PATH="$GEM_HOME/bin:$PATH"
+
+# Installing global NPM modules in home
+npm config set prefix $HOME/.npm
+export PATH=$HOME/.npm/bin:$PATH
+
+# Set editor to emacs
+export EDITOR=/usr/bin/emacs
+export VISUAL=/usr/bin/emacs
+
+# get external IP address
+alias myip="curl ifconfig.me"
+
+# Dangerous
+alias rmrf="trash -rfv"
+
+# Safer rm
+alias t=trash
+
+# Install a package via AUR
+alias aursh="bash <(curl aur.sh) -si"
