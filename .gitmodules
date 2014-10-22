@@ -1,3 +1,6 @@
-[submodule ".config/awesome/apw"]
-	path = .config/awesome/apw
+[submodule "awesome/.config/apw"]
+	path = awesome/.config/apw
+	url = git@github.com:mokasin/apw.git
+[submodule "awesome/.config/awesome/apw"]
+	path = awesome/.config/awesome/apw
 	url = git@github.com:mokasin/apw.git
