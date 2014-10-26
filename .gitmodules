@@ -1,3 +1,6 @@
 [submodule "awesome/.config/awesome/apw"]
 	path = awesome/.config/awesome/apw
 	url = git@github.com:mokasin/apw.git
+[submodule "scripts/screencast.sh"]
+	path = scripts/screencast.sh
+	url = git@github.com:muchweb/screencast.sh.git
