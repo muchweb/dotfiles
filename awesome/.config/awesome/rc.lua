@@ -3,11 +3,10 @@ local gears = require("gears")
 local awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
--- Widget and layout library
-local wibox = require("wibox")
--- Theme handling library
 local beautiful = require("beautiful")
--- Notification library
+
+-- Widget and layout libraries
+local wibox = require("wibox")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local apw = require("apw/widget")
@@ -42,7 +41,7 @@ end
 beautiful.init("~/.config/awesome/mytheme/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "terminator"
+terminal = "terminology"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -56,10 +55,10 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
-    awful.layout.suit.tile,
-    -- awful.layout.suit.max.fullscreen,
     awful.layout.suit.fair,
+    awful.layout.suit.tile,
     awful.layout.suit.floating
+    -- awful.layout.suit.max.fullscreen,
     -- awful.layout.suit.spiral,
     -- awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.tile.left,
@@ -163,6 +162,19 @@ mytasklist.buttons = awful.util.table.join(
                                               if client.focus then client.focus:raise() end
                                           end))
 
+batterywidget = wibox.widget.textbox()
+batterywidget:set_text("")
+batterywidgettimer = timer({ timeout = 5 })
+batterywidgettimer:connect_signal("timeout",
+  function()
+    fh = assert(io.popen("acpi | cut -d, -f 2,3 -", "r"))
+    batterywidget:set_text(" " .. fh:read("*l") .. " ")
+    fh:close()
+  end
+)
+batterywidgettimer:start()
+
+
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
@@ -192,6 +204,8 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+
+    right_layout:add(batterywidget)
     right_layout:add(apw)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
@@ -205,6 +219,10 @@ for s = 1, screen.count() do
     mywibox[s]:set_widget(layout)
 end
 -- }}}
+
+
+
+
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
@@ -220,21 +238,21 @@ globalkeys = awful.util.table.join(
        {},
        "Print",
        function()
-           awful.util.spawn("bash ~/scripts/screenshot.sh", false)
+           awful.util.spawn("scripts/screenshot.sh", false)
        end
     ),
     awful.key(
        { modkey, },
        "Pause",
        function()
-           awful.util.spawn("bash ~/scripts/lock.sh", false)
+           awful.util.spawn("scripts/lock.sh", false)
        end
     ),
     awful.key(
        {},
        "Pause",
        function()
-           awful.util.spawn("bash ~/scripts/screencast.sh", false)
+           awful.util.spawn("scripts/screencast.sh", false)
        end
     ),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
