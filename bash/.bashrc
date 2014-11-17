@@ -46,6 +46,9 @@ export PATH="$GEM_HOME/bin:$PATH"
 npm config set prefix $HOME/.npm
 export PATH=$HOME/.npm/bin:$PATH
 
+# GO
+export GOPATH=~/go
+
 # Set editor to emacs
 export EDITOR=/usr/bin/emacs
 export VISUAL=/usr/bin/emacs
