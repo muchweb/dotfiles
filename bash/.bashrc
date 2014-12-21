@@ -64,3 +64,6 @@ alias t=trash
 
 # Install a package via AUR
 alias aursh="bash <(curl aur.sh) -si"
+
+# Mutt background fix
+COLORFGBG="default;default" 
