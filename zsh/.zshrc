@@ -27,13 +27,17 @@ source $ZSH/oh-my-zsh.sh
 # alias lrt='ls -1Fcrt'
 
 # Installing global GEM modules in home
-export GEM_HOME=$HOME/gems
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-export PATH="$GEM_HOME/bin:$PATH"
+if hash ruby 2>/dev/null; then
+ export GEM_HOME=$HOME/gems
+ export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+ export PATH="$GEM_HOME/bin:$PATH"
+fi
 
 # Installing global NPM modules in home
-npm config set prefix $HOME/.npm
-export PATH=$HOME/.npm/bin:$PATH
+if hash npm 2>/dev/null; then
+ npm config set prefix $HOME/.npm
+ export PATH=$HOME/.npm/bin:$PATH
+fi
 
 # GO
 export GOPATH=~/go
