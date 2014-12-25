@@ -6,6 +6,8 @@ Don't forget to `git clone --recursive` as this repo is using submodules
 
 ## Scripts
 
+Installing scripts to `/usr/local/bin`:
+
 ```bash
-# sudo stow -t "/" scripts
+sudo stow -t "/" scripts
 ```
