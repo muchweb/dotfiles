@@ -119,9 +119,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
--- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- }}}
+-- Menubar configuration menubar.utils.terminal = terminal -- Set theterminal for applications that require it -- }}}
 
 -- {{{ Wibox
 -- Create a textclock widget
@@ -522,5 +520,7 @@ for s = 1, screen.count() do screen[s]:add_signal("arrange", function ()
 end
 -- }}}
 
-
-awful.util.spawn_with_shell("~/set_up.sh")
+awful.util.spawn_with_shell("xsetroot -solid '#222'")
+awful.util.spawn_with_shell("xset m 1 1")
+awful.util.spawn_with_shell("setxkbmap -layout gb")
+awful.util.spawn_with_shell("xscreensaver -no-splash &")
