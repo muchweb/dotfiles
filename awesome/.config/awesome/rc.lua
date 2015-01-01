@@ -260,7 +260,7 @@ globalkeys = awful.util.table.join(
        {},
        "Print",
        function()
-           awful.util.spawn("scripts/screenshot.sh", false)
+           awful.util.spawn("screenshot.sh", false)
        end
     ),
     awful.key(
