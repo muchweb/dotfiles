@@ -251,7 +251,11 @@ kbdcfg.widget:buttons(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({ modkey }, "b", function ()
+        mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible
+    end),
     awful.key(
+
        { modkey, },
        "space",
        function () kbdcfg.switch() end
