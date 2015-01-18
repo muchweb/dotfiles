@@ -524,7 +524,10 @@ for s = 1, screen.count() do screen[s]:add_signal("arrange", function ()
 end
 -- }}}
 
-awful.util.spawn_with_shell("xsetroot -solid '#222'")
+awful.util.spawn_with_shell("xsetroot -solid '#202020'")
 awful.util.spawn_with_shell("xset m 1 1")
 awful.util.spawn_with_shell("setxkbmap -layout gb")
 awful.util.spawn_with_shell("xscreensaver -no-splash &")
+
+-- awful.util.spawn_with_shell("hsetroot -solid '#202020'")
+-- awful.util.spawn_with_shell("compton --config ~/.compton.conf")
