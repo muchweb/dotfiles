@@ -18,5 +18,13 @@ git clone --recursive git@github.com:muchweb/dotfiles.git -- .dotfiles
 Installing scripts to `/usr/local/bin`:
 
 ```bash
-sudo stow -t "/" scripts
+sudo stow -t '/' scripts
+```
+
+## Lightdm
+
+Installing lightdm config to `/etc/lightdm/lightdm.conf`:
+
+```bash
+sudo stow -t '/' lightdm
 ```
