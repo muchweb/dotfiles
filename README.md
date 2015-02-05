@@ -26,5 +26,7 @@ sudo stow -t '/' scripts
 Installing lightdm config to `/etc/lightdm/lightdm.conf`:
 
 ```bash
-sudo stow -t '/' lightdm
+yaourt -S gtk-theme-boje flattr-icon-theme-git
+sudo rm /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm.conf
+sudo stow -t '/' lightdm lightdm-gtk-greeter
 ```
