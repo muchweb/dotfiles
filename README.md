@@ -30,3 +30,11 @@ yaourt -S gtk-theme-boje flattr-icon-theme-git
 sudo rm /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm.conf
 sudo stow -t '/' lightdm lightdm-gtk-greeter
 ```
+
+## ZSH
+
+```bash
+git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ../.oh-my-zsh
+chsh -s $(which zsh)
+stow zsh
+```
