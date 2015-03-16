@@ -267,13 +267,24 @@ globalkeys = awful.util.table.join(
            awful.util.spawn("screenshot.sh", false)
        end
     ),
-    awful.key(
-       { modkey, },
-       "Pause",
-       function()
-           awful.util.spawn("scripts/lock.sh", false)
-       end
-    ),
+
+    awful.key({modkey}, 'Pause', function()
+           awful.util.spawn("xscreensaver-command -lock", false)
+    end),
+    awful.key({modkey}, 'Prior', function()
+           awful.util.spawn("xbacklight -d :0 +25%", false)
+    end),
+    awful.key({modkey}, 'Next', function()
+           awful.util.spawn("xbacklight -d :0 -25%", false)
+    end),
+    awful.key({modkey}, 'Down', function()
+           awful.util.spawn("pactl set-sink-volume 0 -- -10%", false)
+    end),
+    awful.key({modkey}, 'Up', function()
+           awful.util.spawn("pactl set-sink-volume 0 -- +10%", false)
+    end),
+    
+    
     awful.key(
        {},
        "Pause",
