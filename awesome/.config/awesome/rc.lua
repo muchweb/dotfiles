@@ -520,4 +520,4 @@ for s = 1, screen.count() do screen[s]:add_signal("arrange", function()
 end
 -- }}}
 
-awful.util.spawn_with_shell("~/autostart.sh")
+awful.util.spawn_with_shell("~/.autostart.sh")
