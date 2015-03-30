@@ -13,15 +13,8 @@ Clone it to your home directory:
 git clone --recursive git@github.com:muchweb/dotfiles.git -- .dotfiles
 ```
 
-## Scripts
-
-Installing scripts to `/usr/local/bin`:
-
-```bash
-sudo stow -t '/' scripts
-```
-
-## Lightdm
+## Requirements
+### Lightdm
 
 Installing lightdm config to `/etc/lightdm/lightdm.conf`:
 
@@ -31,10 +24,19 @@ sudo rm /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm.conf
 sudo stow -t '/' lightdm lightdm-gtk-greeter
 ```
 
-## ZSH
+### ZSH
 
 ```bash
 git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ../.oh-my-zsh
 chsh -s $(which zsh)
 stow zsh
+```
+
+## Installing
+
+Installing scripts to `/usr/local/bin`:
+
+```bash
+sudo stow -t '/' scripts lightdm lightdm-gtk-greeter
+stow autostart awesome bash compton gimp key-mon mpd scripts terminator terminology yaourt zsh
 ```
