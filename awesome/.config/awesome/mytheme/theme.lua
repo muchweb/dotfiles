@@ -10,8 +10,6 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper_cmd = { "xsetroot -solid '#2D2D2D'" }
--- doesn't work for some reason
 -- }}}
 
 -- {{{ Styles
