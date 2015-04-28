@@ -1,0 +1,54 @@
+! General
+!urxvt*termName:  rxvt-256color
+urxvt*loginShell:         true
+urxvt*scrollBar:         false
+urxvt*secondaryScroll:    true
+urxvt*saveLines:         65535
+urxvt*cursorBlink:       false
+urxvt*urgentOnBell:       true
+!urxvt*override-redirect:false
+!urxvt*borderLess:       false
+!urxvt*internalBorder:       0
+!urxvt*externalBorder:       0
+
+! Extensions
+urxvt*perl-lib:        /usr/lib/urxvt/perl/
+urxvt*perl-ext-common: default,matcher,searchable-scrollback
+urxvt*urlLauncher:     /usr/bin/firefox
+urxvt*matcher.button:  1
+!  - catch ugly URLs
+urxvt.cutchars:        `()'*<>[]{|}"
+
+! Appearance
+!  - use a bitmap font
+urxvt*font:        -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+urxvt*boldFont:    -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
+!  - use xft for drawing fonts
+!urxvt*font:       xft:Terminus:8
+!  - cursor
+urxvt*cursorColor: #DCDCCC
+!  - pseudo transparency
+!urxvt*shading:    50
+!urxvt*transparent:true
+!
+!  - color scheme
+
+! gllt scheme
+*background: #121212
+*foreground: #B1B1B1
+*color0:  #000000
+*color8:  #555753
+*color1:  #80180C
+*color9:  #FF3019
+*color2:  #5A800F
+*color10: #A6EC1C
+*color3:  #6A800C
+*color11: #A9CC14
+*color4:  #003780
+*color12: #006FFF
+*color5:  #800F29
+*color13: #CC1841
+*color6:  #518080
+*color14: #8AD8D8
+*color7:  #8C8C96
+*color15: #D6D6E0
