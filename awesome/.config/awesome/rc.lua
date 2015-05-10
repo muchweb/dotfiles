@@ -42,7 +42,7 @@ end
 beautiful.init("~/.config/awesome/mytheme/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-var_terminal = "terminology"
+var_terminal = "urxvt"
 editor_cmd = var_terminal .. " -e emacs"
 var_browser = "firefox"
 var_email   = "thunderbird"
