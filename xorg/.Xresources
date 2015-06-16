@@ -34,7 +34,8 @@ URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 ! General
-urxvt*termName:  xterm-256color
+urxvt*termName:  rxvt-unicode
+!urxvt*termName:  xterm-256color
 urxvt*loginShell:         true
 urxvt*scrollBar:         false
 urxvt*secondaryScroll:    true
@@ -66,29 +67,29 @@ urxvt*cursorColor: #DCDCCC
 !urxvt*transparent:true
 !
 !  - color scheme
-*background: #2d2d2d
+*background: #232323
 *foreground: #d3d0c8
 !black+bright-black
 *color0:  #000000
-*color8:  #555753
+*color8:  #2D2D2D
 !red+bright-red
-*color1:  #f14549
-*color9:  #f2777a
+*color1:  #D75F5F
+*color9:  #E33636
 !green+bright-green
-*color2:  #5A800F
-*color10: #A6EC1C
+*color2:  #87AF5F
+*color10: #98E34D
 !yellow+bright-yellow
-*color3:  #f99157
-*color11: #f9c657
+*color3:  #D7AF87
+*color11: #FFD75F
 !blue+bright-blue
-*color4:  #197ee5
-*color12: #6699cc
+*color4:  #8787AF
+*color12: #7373C9
 !purple+bright-purple
-*color5:  #cd5acc
-*color13: #cc99cc
+*color5:  #BD53A5
+*color13: #D633B2
 !cyan+bright-cyan
-*color6:  #518080
-*color14: #8AD8D8
+*color6:  #5FAFAF
+*color14: #44C9C9
 !white+bright-white
-*color7:  #8C8C96
-*color15: #D6D6E0
+*color7:  #E5E5E5
+*color15: #FFFFFF
