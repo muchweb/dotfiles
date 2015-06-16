@@ -1,46 +1,3 @@
-! Base16 Eighties
-! Scheme: Chris Kempson (http://chriskempson.com)
-
-#define base00 #2d2d2d
-#define base01 #393939
-#define base02 #515151
-#define base03 #747369
-#define base04 #a09f93
-#define base05 #d3d0c8
-#define base06 #e8e6df
-#define base07 #f2f0ec
-#define base08 #f2777a
-#define base09 #f99157
-#define base0A #ffcc66
-#define base0B #99cc99
-#define base0C #66cccc
-#define base0D #6699cc
-#define base0E #cc99cc
-#define base0F #d27b53
-
-*.foreground:   base05
-*.background:   base00
-*.cursorColor:  base05
-
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
-
-*.color8:       base03
-*.color9:       base09
-*.color10:      base01
-*.color11:      base02
-*.color12:      base04
-*.color13:      base06
-*.color14:      base0F
-*.color15:      base07
-
-
 xscreensaver.splash: false
 
 !general dialog box (affects main hostname, username, password text)
@@ -70,9 +27,68 @@ xscreensaver.Dialog.logo.width: 20
 xscreensaver.Dialog.logo.height: 20
 
 
-
 !enable URxvt clipboard copy
 URxvt.perl-ext-common: default,clipboard
 URxvt.iso14755: False
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+! General
+urxvt*termName:  xterm-256color
+urxvt*loginShell:         true
+urxvt*scrollBar:         false
+urxvt*secondaryScroll:    true
+urxvt*saveLines:         65535
+urxvt*cursorBlink:       false
+urxvt*urgentOnBell:       true
+!urxvt*override-redirect:false
+!urxvt*borderLess:       false
+!urxvt*internalBorder:       0
+!urxvt*externalBorder:       0
+
+! Extensions
+urxvt*perl-lib:        /usr/lib/urxvt/perl/
+urxvt*perl-ext-common: default,matcher,searchable-scrollback
+urxvt*urlLauncher:     /usr/bin/firefox
+urxvt*matcher.button:  1
+!  - catch ugly URLs
+
+! Appearance
+!  - use a bitmap font
+urxvt*font:        -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-*-*
+urxvt*boldFont:    -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-*-*
+!  - use xft for drawing fonts
+!urxvt*font:       xft:Terminus:8
+!  - cursor
+urxvt*cursorColor: #DCDCCC
+!  - pseudo transparency
+!urxvt*shading:    50
+!urxvt*transparent:true
+!
+!  - color scheme
+*background: #2d2d2d
+*foreground: #d3d0c8
+!black+bright-black
+*color0:  #000000
+*color8:  #555753
+!red+bright-red
+*color1:  #f14549
+*color9:  #f2777a
+!green+bright-green
+*color2:  #5A800F
+*color10: #A6EC1C
+!yellow+bright-yellow
+*color3:  #f99157
+*color11: #f9c657
+!blue+bright-blue
+*color4:  #197ee5
+*color12: #6699cc
+!purple+bright-purple
+*color5:  #cd5acc
+*color13: #cc99cc
+!cyan+bright-cyan
+*color6:  #518080
+*color14: #8AD8D8
+!white+bright-white
+*color7:  #8C8C96
+*color15: #D6D6E0
