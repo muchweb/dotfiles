@@ -1,0 +1,29 @@
+"*":
+  welcome:
+    showOnStartup: false
+  core:
+    autoHideMenuBar: true
+    themes: [
+      "one-dark-ui"
+      "base16-eighties-dark-syntax"
+    ]
+    disabledPackages: [
+      "metrics"
+      "background-tips"
+    ]
+  editor:
+    invisibles: {}
+    lineHeight: 0.9
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+    softTabs: false
+    autoIndent: false
+  "one-dark-ui":
+    layoutMode: "Compact"
+  fonts:
+    fontFamily: "Proggy Clean"
+  "tree-view-finder": {}
+  linter:
+    statusBar: "Show all errors"
