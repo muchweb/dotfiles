@@ -13,11 +13,13 @@
     ]
   editor:
     invisibles: {}
+    lineHeight: 0.9
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
     softTabs: false
+    autoIndent: false
   "one-dark-ui":
     layoutMode: "Compact"
   fonts:
