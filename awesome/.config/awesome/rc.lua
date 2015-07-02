@@ -313,6 +313,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
+    awful.key({ modkey, "Shift" },            "r", function()
+           awful.util.spawn("rofi -show run", false)
+    end),
     awful.key({ modkey },            "r",     function() mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
