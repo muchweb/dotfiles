@@ -5,37 +5,33 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="muchweb"
+ZSH_THEME="rkj-repos"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(web-search pacman cake common-aliases docker npm svn sudo systemd)
+plugins=(sudo)
 
 source $ZSH/oh-my-zsh.sh
 
+alias l='ls -lFh'     #size,show type,human readable
+alias la='ls -lAFh'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
 # = Cheat sheet =
 # alias l='ls -lFh' #size,show type,human readable
 # alias la='ls -lAFh' #long list,show almost all,show type,human readable
 # alias lr='ls -tRFh' #sorted by date,recursive,show type,human readable
-# alias lt='ls -ltFh' #long list,sorted by date,show type,human readable
-# alias ll='ls -l' #long list
-# alias ldot='ls -ld .*'
-# alias lS='ls -1FSsh'
-# alias lart='ls -1Fcart'
-# alias lrt='ls -1Fcrt'
 
 # Installing global GEM modules in home
 if hash ruby 2>/dev/null; then
- export GEM_HOME=$HOME/gems
+ export GEM_HOME=$HOME/.gems
  export GEM_HOME=$(ruby -e 'print Gem.user_dir')
  export PATH="$GEM_HOME/bin:$PATH"
 fi
 
 # Installing global NPM modules in home
 if hash npm 2>/dev/null; then
- npm config set prefix $HOME/.npm
  export PATH=$HOME/.npm/bin:$PATH
 fi
 
@@ -49,14 +45,26 @@ export VISUAL=/usr/bin/emacs
 # get external IP address
 alias myip="curl ifconfig.me"
 
-# Dangerous
-alias rmrf="trash -rfv"
-
-# Safer rm
-alias t=trash
-
-# Install a package via AUR
-alias aursh="bash <(curl aur.sh) -si"
-
 # Mutt background fix
-COLORFGBG="default;default" 
+COLORFGBG="default;default"
+
+# TTY Colours
+if [ "$TERM" = "linux" ]; then
+    setfont ter-114n
+    echo -en "\e]P0232323" #black
+    echo -en "\e]P82B2B2B" #darkgrey
+    echo -en "\e]P1D75F5F" #darkred
+    echo -en "\e]P9E33636" #red
+    echo -en "\e]P287AF5F" #darkgreen
+    echo -en "\e]PA98E34D" #green
+    echo -en "\e]P3D7AF87" #brown
+    echo -en "\e]PBFFD75F" #yellow
+    echo -en "\e]P48787AF" #darkblue
+    echo -en "\e]PC7373C9" #blue
+    echo -en "\e]P5BD53A5" #darkmagenta
+    echo -en "\e]PDD633B2" #magenta
+    echo -en "\e]P65FAFAF" #darkcyan
+    echo -en "\e]PE44C9C9" #cyan
+    echo -en "\e]P7E5E5E5" #lightgrey
+    echo -en "\e]PFFFFFFF" #white
+fi
