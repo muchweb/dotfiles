@@ -13,17 +13,20 @@
     ]
   editor:
     invisibles: {}
-    lineHeight: 0.9
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
     softTabs: false
-    autoIndent: false
   "one-dark-ui":
     layoutMode: "Compact"
   fonts:
     fontFamily: "Proggy Clean"
   "tree-view-finder": {}
-  linter:
-    statusBar: "Show all errors"
+  linter: {}
+  "exception-reporting":
+    userId: "2c2bc7b0-f9c6-ae03-dc01-fe4d8f9ca2fe"
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+    wrapSelectionsInBrackets: false
